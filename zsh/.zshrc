@@ -26,7 +26,7 @@ export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --preview '
 
 export EDITOR='nvim'
 
-alias tmux="tmux -f ~/dotfiles/tmux/.tmux.conf"
+alias tmux="tmux -f ~/.dotfiles/tmux/.tmux.conf"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
