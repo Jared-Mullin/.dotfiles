@@ -1,5 +1,4 @@
-vim.g.mapleader = " " 
+vim.g.mapleader = " "
 
--- File Explorer 
+-- File Explorer
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = 'netrw' })
-
