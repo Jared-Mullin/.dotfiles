@@ -4,6 +4,6 @@ return {
     local trouble = require('trouble')
     trouble.setup()
 
-    vim.keymap.set('n', '<leader>tt', function() trouble.toggle() end, {})
+    vim.keymap.set('n', '<leader>xx', function() trouble.toggle() end, { desc = 'Diagnostics (Trouble)' })
   end
 }
