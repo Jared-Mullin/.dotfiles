@@ -32,5 +32,3 @@ alias tmux="tmux -f ~/.dotfiles/tmux/.tmux.conf"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-eval "$(zoxide init zsh)"
