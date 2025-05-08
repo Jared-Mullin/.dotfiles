@@ -9,11 +9,14 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --preview 'cat {}' --border --margin=1 --padding=1"
+
 plugins=(
 	git
-	fzf
 	zsh-syntax-highlighting
 	zsh-autosuggestions
+	fzf
+  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -22,11 +25,12 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="$PATH:/home/phi/.local/bin"
-export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --preview 'cat {}' --border --margin=1 --padding=1"
 
 export EDITOR='nvim'
 
 alias tmux="tmux -f ~/.dotfiles/tmux/.tmux.conf"
+
+source <(fzf --zsh)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

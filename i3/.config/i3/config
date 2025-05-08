@@ -102,6 +102,9 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# screenshots
+bindsym Print exec flameshot gui
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -114,6 +117,22 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+# Set Monitors
+set $monitor_left "DisplayPort-0"
+set $monitor_right "DisplayPort-1"
+
+# Set Workspace to Monitors
+workspace $ws1 output $monitor_right
+workspace $ws2 output $monitor_left
+workspace $ws3 output $monitor_right
+workspace $ws4 output $monitor_left
+workspace $ws5 output $monitor_right
+workspace $ws6 output $monitor_left
+workspace $ws7 output $monitor_right
+workspace $ws8 output $monitor_left
+workspace $ws9 output $monitor_right
+workspace $ws10 output $monitor_left
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -173,22 +192,20 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-gaps inner 4px
+gaps inner 8px
 
 # hides titlebar
 default_border pixel 1
 default_floating_border pixel 1
+
+# compositing
+exec_always picom -b
 
 # wallpaper
 exec_always feh --bg-scale -r /home/phi/Pictures/wallpapers
 
 # polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# misc autostart
-exec_always --no-startup-id kitty
-exec_always --no-startup-id legcord
-exec_always --no-startup-id zen-browser
 
 # Assign Workspaces
 assign [class="kitty"] $ws1
